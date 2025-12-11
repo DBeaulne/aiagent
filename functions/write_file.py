@@ -10,7 +10,11 @@ def write_file(working_directory, file_path, content):
     
     if not os.path.exists(abs_file_path):
         try:
-            os.makedirs(abs_file_path)
+            abs_path_string = abs_file_path.split('/')
+            print(f'new path text: {abs_path_string}')
+            new_abs_path = join(abs_path_string)
+            print(f'new abs path: {new_abs_path}')
+            # os.makedirs(abs_file_path)
         except Exception as e:
             return f'Error creating directory {os.path.dirname(abs_file_path)}: {e}'
 
