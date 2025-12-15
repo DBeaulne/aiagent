@@ -12,3 +12,6 @@ venv
 
 # misc files
 .env
+
+# misc directories
+assets/
