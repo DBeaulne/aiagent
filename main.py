@@ -24,7 +24,15 @@ def main():
     if args.verbose:
         print(f"User prompt: {args.user_prompt}\n")
 
-    generate_content(client, messages, args.verbose)
+    for content in range(20):
+        response = generate_content(client, messages, args.verbose)
+        if response:
+            print("Final response:")
+            print(response)
+            break
+    else:
+        print("Maximum loop iterations without a final response.")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
